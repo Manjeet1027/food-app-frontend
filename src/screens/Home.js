@@ -24,8 +24,8 @@ function Home() {
 
   const loadData = async () => {
     try {
-      // let res = await fetch(`${baseurl}/api/fooddata`, {
-      let res = await fetch(`http://localhost:5000/api/fooddata`, {
+      let res = await fetch(`${baseurl}/api/fooddata`, {
+      // let res = await fetch(`http://localhost:5000/api/fooddata`, {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
@@ -38,6 +38,8 @@ function Home() {
       }
 
       const data = await res.json();
+      console.log("data :", data);
+      
       // Provided default values for foodItem and foodCat
       setFoodItem(data[0] || []);
       setFoodCat(data[1] || []);
@@ -167,13 +169,13 @@ function Home() {
                       );
                     })
                 ) : (
-                  <div>No such data found</div>
+                  <div>No such data found 1</div>
                 )}
               </div>
             );
           })
         ) : (
-          <div>No such data found</div>
+          <div>No such data found 2</div>
         )}
       </div>
 
