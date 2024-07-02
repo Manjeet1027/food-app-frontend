@@ -1,6 +1,7 @@
 import React from 'react'
 // import Delete from '@material-ui/icons/Delete'
 import { useCart, useDispatchCart } from '../components/ContextReducer';
+const baseurl = "https://food-app-backend-2gry.onrender.com";
 export default function Cart() {
   let data = useCart();
   let dispatch = useDispatchCart();
@@ -19,6 +20,7 @@ export default function Cart() {
   const handleCheckOut = async () => {
     let userEmail = localStorage.getItem("userEmail");
     let response = await fetch("http://localhost:5000/api/auth/orderData", {
+    // let response = await fetch(`${baseurl}/api/auth/orderData`, {
       // credentials: 'include',
       // Origin:"http://localhost:3000/login",
       method: 'POST',

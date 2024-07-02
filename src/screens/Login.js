@@ -1,5 +1,6 @@
 import { useState } from "react"
 import { Link, useNavigate } from "react-router-dom"
+const baseurl = "https://food-app-backend-2gry.onrender.com";
 
 function Login() {
   const [credentials, setCredentials] = useState({ email:"", password:""});
@@ -7,7 +8,8 @@ function Login() {
 
   const handleSubmit = async(e) => {
     e.preventDefault();
-    const res = await fetch("http://localhost:5000/api/loginuser",{
+    // const res = await fetch("http://localhost:5000/api/loginuser",{
+    const res = await fetch(`${baseurl}/api/loginuser`,{
       method: "POST",
       headers : {
         "Content-Type" : "application/json"
