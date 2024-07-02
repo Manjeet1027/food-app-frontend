@@ -24,8 +24,8 @@ function Home() {
 
   const loadData = async () => {
     try {
-      // let res = await fetch(`${baseurl}/api/fooddata`, {
-      let res = await fetch(`http://localhost:5000/api/fooddata`, {
+      let res = await fetch(`${baseurl}/api/fooddata`, {
+      // let res = await fetch(`http://localhost:5000/api/fooddata`, {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
