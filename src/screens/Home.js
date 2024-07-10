@@ -144,13 +144,13 @@ function Home() {
                       );
                     })
                 ) : (
-                  <div>No such data found 1</div>
+                  <div>No such data found </div>
                 )}
               </div>
             );
           })
         ) : (
-          <div>No such data found 2</div>
+          <div>No such data found </div>
         )}
       </div>
 

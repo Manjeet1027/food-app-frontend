@@ -1,6 +1,6 @@
 import React, { useState } from "react"
 import { Badge } from "react-bootstrap";
-import { Link, useNavigate, useSearchParams } from "react-router-dom"
+import { Link, useNavigate } from "react-router-dom"
 import Cart from "../screens/Cart";
 import Modal from "../Modal";
 import { useCart } from "./ContextReducer";
@@ -31,7 +31,7 @@ function Navbar() {
               {
                 (localStorage.getItem("authToken")) ?
                   <li className="nav-item">
-                    <Link className="nav-link active fs-5" aria-current="page" to="/">My orders</Link>
+                    <Link className="nav-link active fs-5" aria-current="page" to="/myOrder">My orders</Link>
                   </li>
                 : ""
               }

@@ -22,6 +22,10 @@ const reducer = (state, action) => {
         }
         return food;
       });
+    
+    case "DROP":
+      let emptyArray = []
+      return emptyArray
 
     default:
       console.log("Error in reducer");
