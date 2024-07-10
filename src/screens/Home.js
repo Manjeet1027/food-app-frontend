@@ -12,6 +12,7 @@ function Home() {
   const loadData = async () => {
 
     let res = await fetch(`${baseurl}/api/fooddata`, {
+    // let res = await fetch(`http://localhost:3000/api/fooddata`, {
       method: "POST",
       headers: {
         "Content-Type": "application/json",

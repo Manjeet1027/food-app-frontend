@@ -1,6 +1,6 @@
 import React ,{ useState } from "react"
 import { Link, useNavigate } from "react-router-dom"
-const baseurl = "https://food-app-backend-2-887g.onrender.com";
+// const baseurl = "https://food-app-backend-2-887g.onrender.com";
 
 function Signup() {
   const [credentials, setCredentials] = useState({name:"", email:"", password:"", geolocation:""});
@@ -9,8 +9,8 @@ function Signup() {
 
   const handleSubmit = async(e) => {
     e.preventDefault();
-    const res = await fetch(`${baseurl}/api/createuser`,{
     // const res = await fetch(`${baseurl}/api/createuser`,{
+    const res = await fetch(`http://localhost:3000/api/createuser`,{
       method: "POST",
       headers : {
         "Content-Type" : "application/json"
