@@ -9,8 +9,8 @@ function Signup() {
 
   const handleSubmit = async(e) => {
     e.preventDefault();
-    // const res = await fetch("http://localhost:5000/api/createuser",{
-    const res = await fetch(`${baseurl}/api/createuser`,{
+    const res = await fetch("http://localhost:5000/api/createuser",{
+    // const res = await fetch(`${baseurl}/api/createuser`,{
       method: "POST",
       headers : {
         "Content-Type" : "application/json"
