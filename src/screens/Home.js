@@ -2,50 +2,24 @@ import { useEffect, useState } from "react";
 import Card from "../components/Card";
 import Footer from "../components/Footer";
 import Navbar from "../components/Navbar";
-const baseurl = "https://food-app-backend-2gry.onrender.com";
+const baseurl = "https://food-app-backend-2-887g.onrender.com";
 
 function Home() {
   const [search, setSearch] = useState("");
   const [foodCat, setFoodCat] = useState([]);
   const [foodItem, setFoodItem] = useState([]);
 
-  // const loadData = async () => {
-  //   // let res = await fetch("http://localhost:5000/api/fooddata", {
-  //   let res = await fetch(`${baseurl}/api/fooddata`, {
-  //     method: "POST",
-  //     headers: {
-  //       "Content-Type": "application/json",
-  //     },
-  //   });
-  //   res = await res.json();
-  //   setFoodItem(res[0]);
-  //   setFoodCat(res[1]);
-  // };
-
   const loadData = async () => {
-    try {
-      // let res = await fetch(`${baseurl}/api/fooddata`, {
-      let res = await fetch(`http://localhost:5000/api/fooddata`, {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-        },
-      });
 
-      // Added error handling for network response
-      if (!res.ok) {
-        throw new Error("Network response was not ok");
-      }
-
-      const data = await res.json();
-      console.log("data :", data);
-      
-      // Provided default values for foodItem and foodCat
-      setFoodItem(data[0] || []);
-      setFoodCat(data[1] || []);
-    } catch (error) {
-      console.error("Failed to fetch data:", error);
-    }
+    let res = await fetch(`${baseurl}/api/fooddata`, {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+    });
+    res = await res.json();
+    setFoodItem(res[0]);
+    setFoodCat(res[1]);
   };
 
   useEffect(() => {
