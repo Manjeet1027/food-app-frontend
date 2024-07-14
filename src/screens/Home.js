@@ -118,7 +118,7 @@ function Home() {
           foodCat.map((data) => {
             return (
               <div className="row mb-3" key={data._id}>
-                <div className="fs-3 m-3">
+                <div className="fs-3 m-3 text-white text-center bg-success">
                   {data.CategoryName}
                 </div>
                 <hr />

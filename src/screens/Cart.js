@@ -32,7 +32,8 @@ export default function Cart() {
       body: JSON.stringify({
         order_data: data,
         email: userEmail,
-        order_date: new Date().toDateString()
+        // order_date: new Date().toDateString()
+        order_date: new Date().toLocaleString()
       })
     });
     console.log("JSON RESPONSE:::::", response.status)
