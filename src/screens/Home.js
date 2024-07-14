@@ -51,12 +51,7 @@ function Home() {
                   value={search}
                   onChange={(e) => setSearch(e.target.value)}
                 />
-                <button
-                  className="btn btn-outline-success text-white"
-                  type="submit"
-                >
-                  Search
-                </button>
+
               </div>
             </div>
 
