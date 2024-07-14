@@ -25,9 +25,17 @@ function Signup() {
         const json = await res.json();
         console.log(json);
         if(!json.success){
-          alert("Enter valid credentials")
+          // alert("Enter valid credentials")
+          //-
+          console.log("User already exists or other validation errors:", json.error);
+          alert("User already exists or other validation errors. Please check your details.");
         }
-        else{
+        // else{
+        //-
+          else if(json.success){
+            localStorage.setItem("authToken", json.authToken)
+            localStorage.setItem("userEmail", credentials.email)
+            console.log(localStorage.getItem("authToken"))
           navigate("/")
         }
   }
