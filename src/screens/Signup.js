@@ -68,8 +68,8 @@ function Signup() {
         </div>
 
 
-        <button type="submit" className=" m-3 btn btn-success">Submit</button>
-        <Link to="/login" className="m-3 btn btn-danger" >Already a user</Link>
+        <button type="submit" className="fs-5 m-3 p-2 btn btn-success ">Submit</button>
+        <Link to="/login" className="fs-5 m-3 p-2  btn btn-danger" >Already a user</Link>
       </form>
     </div>
     </div>

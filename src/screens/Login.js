@@ -54,8 +54,8 @@ function Login() {
           <input type="password" className="form-control" id="exampleInputPassword1" name="password" value={credentials.password} onChange={onChange} placeholder="e.g. 123456" />
         </div>
 
-        <button type="submit" className=" m-3 btn btn-success">Submit</button>
-        <Link to="/createuser" className="m-3 btn btn-danger" >I'm a new user</Link>
+        <button type="submit" className="fs-5 m-3 p-2  btn btn-success">Submit</button>
+        <Link to="/createuser" className="fs-5 m-3 p-2  btn btn-danger" >I'm a new user</Link>
       </form>
     </div>
     </div>
