@@ -42,10 +42,13 @@ code {
 }
 
 .user-form .container {
-  border: 2px solid red; 
+  border: 2px solid white; 
   padding: 20px;
   background-color: white; 
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); 
   border-radius: 8px; 
   margin-top: -20vh;
+  background-color: #bce2ed;
+  font-size: 1.5rem;
+  font-weight: bold;
 }
