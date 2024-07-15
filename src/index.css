@@ -86,13 +86,6 @@ code {
   font-size: 1.2rem;
 }
 
-.addBtn:hover {
-  background-color: white; 
-  color: #198754; 
-  transform: scale(1.1);
-  font-weight: bold;
-  border: 2px solid #198754;
-}
 
 
 .selectBtn{
@@ -101,13 +94,6 @@ code {
   font-weight: bold;
   color: white;
   background-color: #198754;
-}
-.selectBtn:hover {
-  background-color: white; 
-  font-weight: bold;
-  color: #198754; 
-  transform: scale(1.1);
-  border: 2px solid green;
 }
 
 .carousel-inner .form-control{
