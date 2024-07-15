@@ -62,3 +62,61 @@ code {
   color: grey; 
 
 }
+
+.navbar .btn1{
+  background-color: white;
+  font-weight: bold;
+  color: #198754;
+  transition: background-color 0.5s, color 0.5s, transform 0.5s;
+}
+
+.navbar .btn1:hover{
+  background-color: red;
+  color: white;
+  transform: scale(1.1);
+}
+
+.addBtn {
+  background-color: #198754;
+  color: white; 
+  transition: background-color 0.3s, color 0.3s, transform 0.5s; 
+  padding: 0.8rem 1rem;
+  border-radius: 10px;
+  font-weight: bold;
+  font-size: 1.2rem;
+}
+
+.addBtn:hover {
+  background-color: white; 
+  color: #198754; 
+  transform: scale(1.1);
+  font-weight: bold;
+  border: 2px solid #198754;
+}
+
+
+.selectBtn{
+  padding: 4px;
+  transition: background-color 0.3s, color 0.3s, transform 0.3s; 
+  font-weight: bold;
+  color: white;
+  background-color: #198754;
+}
+.selectBtn:hover {
+  background-color: white; 
+  font-weight: bold;
+  color: #198754; 
+  transform: scale(1.1);
+  border: 2px solid green;
+}
+
+.carousel-inner .form-control{
+  color: black;
+  font-weight: bold;
+  font-size: 1.3rem;
+}
+.carousel-inner .form-control::placeholder{
+  color: grey;
+  font-weight: bold;
+  font-size: 1.3rem;
+}

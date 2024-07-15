@@ -26,12 +26,12 @@ function Navbar() {
           <div className="collapse navbar-collapse" id="navbarNav">
             <ul className="navbar-nav me-auto">
               <li className="nav-item">
-                <Link className="nav-link active fs-5" aria-current="page" to="/">Home</Link>
+                <Link className="nav-link active fs-4 mx-3" aria-current="page" to="/">Home</Link>
               </li>
               {
                 (localStorage.getItem("authToken")) ?
                   <li className="nav-item">
-                    <Link className="nav-link active fs-5" aria-current="page" to="/myOrder">My orders</Link>
+                    <Link className="nav-link active fs-4" aria-current="page" to="/myOrder">My orders</Link>
                   </li>
                 : ""
               }
@@ -39,19 +39,19 @@ function Navbar() {
               {
                 (!localStorage.getItem("authToken")) ?
                   <div className="d-flex">
-                    <Link className="btn bg-white text-success mx-1" to="/login">Login</Link>
-                    <Link className="btn bg-white text-success mx-1" to="/createuser">Sign up</Link>
+                    <Link className="btn1 fs-5 btn mx-1" to="/login">Login</Link>
+                    <Link className="btn1 fs-5 btn mx-1" to="/createuser">Sign up</Link>
                   </div>
                 :
                 <div>
-                  <div className="btn bg-white text-success mx-2" onClick={() => {setCartView(true)}}>
+                  <div className="btn1 fs-5 btn mx-2" onClick={() => {setCartView(true)}}>
                     My Cart {""}
-                    <Badge pill bg="danger">{data.length}</Badge>
+                    <Badge className="badge" pill bg="danger" >{data.length}</Badge>
                   </div>
                   {
                     cartView ? <Modal onClose={() => setCartView(false)}><Cart /></Modal> : null
                   }
-                  <div className="btn bg-danger text-white mx-2" onClick={handleLogout} >
+                  <div className="btn1 fs-5 btn bg-danger text-white mx-2" onClick={handleLogout} >
                     Log Out
                   </div>
                 </div>
