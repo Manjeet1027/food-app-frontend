@@ -40,8 +40,8 @@ function Login() {
 
   return (
 
-    <>
-    <div className="container">
+    <div className="user-form">
+    <div className="container ">
       <form onSubmit={handleSubmit}>
 
         <div className="mb-3">
@@ -58,7 +58,7 @@ function Login() {
         <Link to="/createuser" className="m-3 btn btn-danger" >I'm a new user</Link>
       </form>
     </div>
-    </>
+    </div>
   )
 }
 

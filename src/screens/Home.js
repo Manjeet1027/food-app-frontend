@@ -57,7 +57,7 @@ function Home() {
 
             <div className="carousel-item active">
               <img
-                src="https://cdn.pixabay.com/photo/2019/11/04/12/16/rice-4601049__340.jpg"
+                src="https://media.istockphoto.com/photos/veg-biryani-picture-id1363306527?b=1&k=20&m=1363306527&s=170667a&w=0&h=VCbro7CX8nq2kruynWOCO2GbMGCea2dDJy6O6ebCKD0="
                 className="d-block w-100"
                 style={{ filter: "brightness(75%)" }}
                 alt="1"
@@ -65,7 +65,7 @@ function Home() {
             </div>
             <div className="carousel-item">
               <img
-                src="https://media.istockphoto.com/photos/veg-biryani-picture-id1363306527?b=1&k=20&m=1363306527&s=170667a&w=0&h=VCbro7CX8nq2kruynWOCO2GbMGCea2dDJy6O6ebCKD0="
+                src="https://cdn.pixabay.com/photo/2018/03/23/08/27/thai-fried-rice-3253027__340.jpg"
                 className="d-block w-100"
                 style={{ filter: "brightness(75%)" }}
                 alt="2"
@@ -73,7 +73,7 @@ function Home() {
             </div>
             <div className="carousel-item">
               <img
-                src="https://cdn.pixabay.com/photo/2018/03/23/08/27/thai-fried-rice-3253027__340.jpg"
+                src="https://cdn.pixabay.com/photo/2019/11/04/12/16/rice-4601049__340.jpg"
                 className="d-block w-100"
                 style={{ filter: "brightness(75%)" }}
                 alt="3"

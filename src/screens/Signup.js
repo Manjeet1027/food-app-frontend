@@ -46,7 +46,7 @@ function Signup() {
 
   return (
 
-    <>
+    <div className="user-form">
     <div className="container">
       <form onSubmit={handleSubmit}>
         <div className="mb-3">
@@ -72,7 +72,7 @@ function Signup() {
         <Link to="/login" className="m-3 btn btn-danger" >Already a user</Link>
       </form>
     </div>
-    </>
+    </div>
   )
 }
 
