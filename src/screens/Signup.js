@@ -3,7 +3,7 @@ import { Link, useNavigate } from "react-router-dom"
 const baseurl = "https://food-app-backend-2-887g.onrender.com";
 
 function Signup() {
-  const [credentials, setCredentials] = useState({name:"sample", email:"sample@gmail.com", password:"", geolocation:""});
+  const [credentials, setCredentials] = useState({name:"random", email:"random@gmail.com", password:"", geolocation:""});
 
   let navigate = useNavigate()
 
@@ -52,11 +52,19 @@ function Signup() {
           <form onSubmit={handleSubmit}>
             <div className="mb-3">
               <label htmlFor="exampleInputEmail1" className="form-label">Name</label>
-              <input type="text" className="form-control" name="name" value={credentials.name} onChange={onChange} placeholder="Name must be atleast of 5 characters" />
+              <input type="text" className="form-control" name="name" value={credentials.name} onChange={onChange} placeholder="Name must be atleast of 5 characters" list="name-suggestions" />
+              <datalist id="name-suggestions">
+                <option value="random">random</option>
+                <option value="testing">testing</option>
+              </datalist>
             </div>
             <div className="mb-3">
               <label htmlFor="exampleInputEmail1" className="form-label">Email address</label>
-              <input type="email" className="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" name="email" value={credentials.email} onChange={onChange} placeholder="e.g. sample@gmail.com" />
+              <input type="email" className="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" name="email" value={credentials.email} onChange={onChange} placeholder="e.g. random@gmail.com" list="email-suggestions" />
+              <datalist id="email-suggestions">
+                <option value="random@gmail.com">random@gmail.com</option>
+                <option value="testing@gmail.com">testing@gmail.com</option>
+              </datalist>
               <div id="emailHelp" className="form-text">We'll never share your email with anyone else.</div>
             </div>
             <div className="mb-3">
@@ -65,7 +73,11 @@ function Signup() {
             </div>
             <div className="mb-3">
               <label htmlFor="exampleInputPassword1" className="form-label">Address</label>
-              <input type="text" className="form-control" id="exampleInputPassword1" name="geolocation" value={credentials.geolocation} onChange={onChange} placeholder="e.g. Delhi"/>
+              <input type="text" className="form-control" id="exampleInputPassword1" name="geolocation" value={credentials.geolocation} onChange={onChange} placeholder="e.g. Delhi" list="address-suggestions"/>
+              <datalist id="address-suggestions">
+                <option value="Delhi">Delhi</option>
+                <option value="Gurgaon">Gurgaon</option>
+              </datalist>
             </div>
 
 
