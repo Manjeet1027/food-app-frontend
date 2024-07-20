@@ -41,23 +41,25 @@ function Login() {
   return (
 
     <div className="user-form">
-    <div className="container ">
-      <form onSubmit={handleSubmit}>
+      <div className="container out-box">
+        <div className="in-box ">
+          <form onSubmit={handleSubmit}>
 
-        <div className="mb-3">
-          <label htmlFor="exampleInputEmail1" className="form-label">Email address</label>
-          <input type="email" className="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" name="email" value={credentials.email} onChange={onChange} placeholder="e.g. sample@gmail.com" />
-          <div id="emailHelp" className="form-text">We'll never share your email with anyone else.</div>
-        </div>
-        <div className="mb-3">
-          <label htmlFor="exampleInputPassword1" className="form-label">Password</label>
-          <input type="password" className="form-control" id="exampleInputPassword1" name="password" value={credentials.password} onChange={onChange} placeholder="e.g. 123456" />
-        </div>
+            <div className="mb-3">
+              <label htmlFor="exampleInputEmail1" className="form-label">Email address</label>
+              <input type="email" className="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" name="email" value={credentials.email} onChange={onChange} placeholder="e.g. sample@gmail.com" />
+              <div id="emailHelp" className="form-text">We'll never share your email with anyone else.</div>
+            </div>
+            <div className="mb-3">
+              <label htmlFor="exampleInputPassword1" className="form-label">Password</label>
+              <input type="password" className="form-control" id="exampleInputPassword1" name="password" value={credentials.password} onChange={onChange} placeholder="e.g. 123456" />
+            </div>
 
-        <button type="submit" className="fs-5 m-3 p-2  btn btn-success">Submit</button>
-        <Link to="/createuser" className="fs-5 m-3 p-2  btn btn-danger" >I'm a new user</Link>
-      </form>
-    </div>
+            <button type="submit" className="fs-5 m-3 p-2  btn btn-success">Submit</button>
+            <Link to="/createuser" className="fs-5 m-3 p-2  btn btn-danger" >I'm a new user</Link>
+          </form>
+        </div>
+      </div>
     </div>
   )
 }

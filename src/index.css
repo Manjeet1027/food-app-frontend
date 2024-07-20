@@ -51,6 +51,7 @@ code {
   background-color: #bce2ed;
   font-size: 1.5rem;
   font-weight: bold;
+  z-index: 10001;
 }
 
 .user-form .container .form-control{
@@ -107,4 +108,40 @@ code {
   color: grey;
   font-weight: bold;
   font-size: 1.3rem;
+}
+
+.user-form .out-box{
+  /* border: 2px solid red; */
+  /* padding: 20px; */
+  position: relative;
+  overflow: hidden;
+  z-index: 1;
+}
+
+.user-form .in-box{
+  /* border: 2px solid black; */
+  border-radius: 10px;
+  padding: 20px;
+  position: relative;
+  z-index: 2;
+  background-color: #bce2ed;
+}
+
+.user-form .out-box::after{
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%) rotate(45deg);
+  height: 1000px;
+  width: 200px;
+  background-color: white;
+  animation: move 1.75s infinite;
+  
+}
+
+@keyframes move {
+  100%{
+    transform: translate(-50%, -50%) rotate(225deg);
+  }
 }
