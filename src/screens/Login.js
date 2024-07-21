@@ -4,6 +4,7 @@ const baseurl = "https://food-app-backend-2-887g.onrender.com";
 
 function Login() {
   const [credentials, setCredentials] = useState({ email:"", password:""});
+  const [passwordVisible, setPasswordVisible] = useState(false);
   let navigate = useNavigate();
 
   const handleSubmit = async(e) => {
@@ -38,6 +39,12 @@ function Login() {
     setCredentials({...credentials, [event.target.name] : event.target.value})
   }
 
+  const close = "👁️"
+  const open = "⛔"
+  const showPass = () => {
+    setPasswordVisible(!passwordVisible);
+  }
+
   return (
 
     <div className="user-form">
@@ -55,7 +62,12 @@ function Login() {
             </div>
             <div className="mb-3">
               <label htmlFor="exampleInputPassword1" className="form-label">Password</label>
-              <input type="password" className="form-control" id="exampleInputPassword1" name="password" value={credentials.password} onChange={onChange} placeholder="e.g. 123456" />
+              <div className="d-flex align-items-center">
+                <input 
+                type={passwordVisible ? "text" : "password"} 
+                className="form-control" id="exampleInputPassword1" name="password" value={credentials.password} onChange={onChange} placeholder="e.g. 123456" />
+                <div className="showPass" onClick={showPass}>{passwordVisible ? open : close}</div>
+              </div>
             </div>
 
             <button type="submit" className="fs-5 m-3 p-2  btn btn-success">Submit</button>

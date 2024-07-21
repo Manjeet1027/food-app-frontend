@@ -145,3 +145,10 @@ code {
     transform: translate(-50%, -50%) rotate(225deg);
   }
 }
+
+.showPass{
+  cursor: pointer;
+  font-size: 1.75rem;
+  background: none;
+  border: none;
+}

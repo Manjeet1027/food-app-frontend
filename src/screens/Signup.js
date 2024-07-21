@@ -4,6 +4,7 @@ const baseurl = "https://food-app-backend-2-887g.onrender.com";
 
 function Signup() {
   const [credentials, setCredentials] = useState({name:"random", email:"random@gmail.com", password:"", geolocation:""});
+  const [passwordVisible, setPasswordVisible] = useState(false);
 
   let navigate = useNavigate()
 
@@ -44,6 +45,12 @@ function Signup() {
     setCredentials({...credentials, [event.target.name] : event.target.value})
   }
 
+  const close = "👁️"
+  const open = "⛔"
+  const showPass = () => {
+    setPasswordVisible(!passwordVisible);
+  }
+
   return (
 
     <div className="user-form">
@@ -69,7 +76,12 @@ function Signup() {
             </div>
             <div className="mb-3">
               <label htmlFor="exampleInputPassword1" className="form-label">Password</label>
-              <input type="password" className="form-control" id="exampleInputPassword1" name="password" value={credentials.password} onChange={onChange} placeholder="Password must be atleast of 5 characters" />
+              <div className="d-flex align-items-center">
+                <input 
+                type={passwordVisible ? "text" : "password"}  
+                className="form-control" id="exampleInputPassword1" name="password" value={credentials.password} onChange={onChange} placeholder="Password must be atleast of 5 characters" />
+                <div className="showPass" onClick={showPass}>{passwordVisible ? open : close}</div>
+              </div>
             </div>
             <div className="mb-3">
               <label htmlFor="exampleInputPassword1" className="form-label">Address</label>
