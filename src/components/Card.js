@@ -1,5 +1,6 @@
 import { useEffect, useRef, useState } from "react";
 import { useCart, useDispatchCart } from "./ContextReducer";
+import { useNavigate } from "react-router-dom";
 
 function Card(props) {
 
@@ -10,6 +11,7 @@ function Card(props) {
   let priceOptions = Object.keys(options);
   const [qty, setQty] = useState(1);
   const [size, setSize] = useState("");
+  const navigate = useNavigate();
 
   let finalPrice = qty * parseInt(options[size])
   useEffect(() => {
@@ -18,14 +20,20 @@ function Card(props) {
   
 
   const handleAddToCart = async () => {
-    let food = data.find(item => item.id === props.foodItem._id && item.size === size);
-  
-    if (food) {
-      await dispatch({ type: "UPDATE", id: props.foodItem._id, price: finalPrice, qty: qty, size: size });
-    } else {
-      await dispatch({ type: "ADD", id: props.foodItem._id, name: props.foodItem.name, price: finalPrice, img: props.foodItem.img, qty, size });
-      console.log(data);
-      console.log("Size different so simply ADD one more to the list");
+    if(localStorage.getItem("authToken")) {
+
+      let food = data.find(item => item.id === props.foodItem._id && item.size === size);
+    
+      if (food) {
+        await dispatch({ type: "UPDATE", id: props.foodItem._id, price: finalPrice, qty: qty, size: size });
+      } else {
+        await dispatch({ type: "ADD", id: props.foodItem._id, name: props.foodItem.name, price: finalPrice, img: props.foodItem.img, qty, size });
+        console.log(data);
+        console.log("Size different so simply ADD one more to the list");
+      } 
+    }
+    else{
+      navigate("/login");
     }
   }
   
