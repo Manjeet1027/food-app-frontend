@@ -139,13 +139,17 @@ function Home() {
                       );
                     })
                 ) : (
-                  <div>No such data found </div>
+                  <div>No such data found 1</div>
                 )}
               </div>
             );
           })
         ) : (
-          <div>No such data found </div>
+          <div>
+            <p>Please wait </p>
+            <p> Data is Loading...</p>
+            <p>THANKS FOR THE PATIENCE 😊</p>
+          </div>
         )}
       </div>
 
