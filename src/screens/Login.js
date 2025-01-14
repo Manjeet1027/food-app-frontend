@@ -6,7 +6,7 @@ function Login() {
   const [credentials, setCredentials] = useState({ email: "", password: "" });
   const [passwordVisible, setPasswordVisible] = useState(false);
   let navigate = useNavigate();
-  let guestUser = false;
+  const [guestUser, setGuestUser] = useState(false);
 
   const useGuestDetails = () => {
     const guestDetails = {
@@ -14,15 +14,16 @@ function Login() {
       password: "123456"
     }
     setCredentials(guestDetails);
-    guestUser = true;
+    setGuestUser(true);
     // handleSubmit();
   }
 
   useEffect(() => {
-    if (credentials.email === "sample@gmail.com" && credentials.password === "123456" && guestUser) {
-      handleSubmit({ preventDefault: () => {} });
+    if (credentials.email === "sample@gmail.com" && credentials.password === "123456" && guestUser) {   // used guestUser so that user dont get signed in by typing the same email and password, as credentials are in dependency array so when the match user gets logged in without hitting the enter
+      setGuestUser(false);
+      handleSubmit();
     }
-  }, [credentials]);
+  }, [credentials, guestUser]);
 
   const handleSubmit = async (e) => {
     if(e){
