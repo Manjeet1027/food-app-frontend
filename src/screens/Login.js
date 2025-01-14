@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 const baseurl = "https://food-app-backend-2-887g.onrender.com";
 
@@ -6,9 +6,28 @@ function Login() {
   const [credentials, setCredentials] = useState({ email: "", password: "" });
   const [passwordVisible, setPasswordVisible] = useState(false);
   let navigate = useNavigate();
+  let guestUser = false;
+
+  const useGuestDetails = () => {
+    const guestDetails = {
+      email : "sample@gmail.com",
+      password: "123456"
+    }
+    setCredentials(guestDetails);
+    guestUser = true;
+    // handleSubmit();
+  }
+
+  useEffect(() => {
+    if (credentials.email === "sample@gmail.com" && credentials.password === "123456" && guestUser) {
+      handleSubmit({ preventDefault: () => {} });
+    }
+  }, [credentials]);
 
   const handleSubmit = async (e) => {
-    e.preventDefault();
+    if(e){
+      e.preventDefault();
+    }
     const res = await fetch(`${baseurl}/api/loginuser`, {
       // const res = await fetch(`http://localhost:3000/api/loginuser`,{
       method: "POST",
@@ -28,7 +47,7 @@ function Login() {
     } else if (json.success) {
       localStorage.setItem("authToken", json.authToken);
       localStorage.setItem("userEmail", credentials.email);
-      console.log(localStorage.getItem("authToken"));
+      // console.log(localStorage.getItem("authToken"));
       navigate("/");
     }
   };
@@ -92,6 +111,9 @@ function Login() {
 
             <button type="submit" className="fs-5 m-3 p-2  btn btn-success">
               Submit
+            </button>
+            <button type="button" className="fs-5 m-3 p-2  btn btn-success" onClick={useGuestDetails}>
+              Use Guest Details
             </button>
             <Link to="/createuser" className="fs-5 m-3 p-2  btn btn-danger">
               I'm a new user
